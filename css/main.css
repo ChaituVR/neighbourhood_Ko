@@ -7,12 +7,12 @@ html, body {
 }
 
 #maparea {
-  position: absolute;
-    display: inline-block;
-  height: calc(100% - 4px);
-  width: 100%;
+  position: relative;;
 
-  right:0px;
+  height: calc(100% - 4px);
+  width: calc(100% - 353px);
+left:353px;
+  /*right:0px;*/
    z-index: 0;
 
 }
@@ -27,6 +27,16 @@ html, body {
   left:10px;
 
   z-index: 2;
+}
+.navbarBread{
+   width:20px;
+   height:2px;
+   background: black;
+   border: solid 1px;
+       display: block;
+   /*background-color: rgba(0, 0, 0, 0.5);*/
+   z-index: 10;
+   margin:3px;
 }
 #main {
   position:absolute;
@@ -80,8 +90,13 @@ html, body {
 .TabCollapsed{
   color:yellow;
 }
-@media (max-width:550px) {
+@media (max-width:660px) {
   #main{
-    display: none;
+    margin-left: -353px;
+    opacity: 0.4;
+  }
+  #maparea{
+ left:0px;
+ width: 100%;
   }
 }
