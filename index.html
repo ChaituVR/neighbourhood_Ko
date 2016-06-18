@@ -14,67 +14,22 @@
       <div id="main">
 
       <h1 id="title">Neighbourhood</h1>
-
-      </div>
       <div class="colapse-btn" data-bind="event:{click:IsTabCollapsed}"></div>
 
       </div>
+      </div>
+    <div id="maparea">
     <div id="map">
 
     </div>
+    <div id="searchBar">
+    <input type="text" placeholder="Search your places">
+    </div>
+  </div>
 
 
-
-    <script>
-    $(document).ready(function(){
-      $("#map").animate({width: "-=353px"},1000)
-      // $(".colapse-btn").on('click',function(){
-      //   console.log("awefawefa");
-      //   $('#main').toggleClass("slideInLeft slideOutLeft");
-      //   $('.colapse-btn').animate({ "left": "500px" });
-      // });
-      var viewModel = {
-        TabCollapsed:ko.observable(false),
-        IsTabCollapsed: function(event){
-          //$('#main').toggleClass("slideInLeft slideOutLeft");
-
-
-          if(this.TabCollapsed){
-            $( ".colapse-btn, #main" ).animate({
-                                          opacity: 0.4,
-                                          marginLeft: "-353px"
-                                        }, 1000 );
-            $("#map").animate({width: "+=353px"},1000)
-            this.TabCollapsed=false;
-
-
-          }
-          else{
-            $( ".colapse-btn, #main" ).animate({
-                                          opacity: 1,
-                                          marginLeft: "0px"
-                                        }, 1000 );
-            $("#map").animate({width: "-=353px"},1000)
-            this.TabCollapsed=true;
-
-
-          }
-        },
-
-
-    };
-    ko.applyBindings(viewModel);
-    });
-      var map;
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 17.6868, lng: 83.2185},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnWVs3okwMTcMO5IEPvc4EGTrbvn1OBY8&callback=initMap" async defer></script>
     <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
 
   </body>
